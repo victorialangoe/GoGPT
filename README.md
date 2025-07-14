@@ -1,4 +1,5 @@
 # GoGPT
+![GoGPT Logo](assets/GoGPT.svg)
 
 A simple command-line chatbot written in Go that can greet users, tell the time, and share jokes.
 
