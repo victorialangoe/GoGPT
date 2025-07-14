@@ -1,0 +1,8 @@
+GoGPT
+
+# Build directories
+build/
+dist/
+
+# Node modules
+node_modules/
