@@ -2,6 +2,7 @@ package main
 
 import (
 	"GoGPT/chatbot"
+	"GoGPT/handlers"
 	"bufio"
 	"fmt"
 	"os"
@@ -9,7 +10,11 @@ import (
 )
 
 func main() {
-	b := chatbot.Bot{Name: "GoGPT"}
+	inputHandler := handlers.NewInputHandler()
+	b := chatbot.Bot{
+		Name: "GoGPT",
+		InputHandler: inputHandler,
+	}
     reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Welcome to GoGPT! Please enter your name: ")
 
@@ -21,7 +26,11 @@ func main() {
 
 	for {
 		fmt.Println("What would you like me to do?")
-		fmt.Println("I can 1) introduce myself, 2) tell you the time, or 3) tell a joke or 0 to exit")
+		fmt.Println("You can type numbers (1, 2, 3) or use natural language:")
+		fmt.Println("- 1 or 'hello' / 'introduce yourself'")
+		fmt.Println("- 2 or 'what time is it?'")
+		fmt.Println("- 3 or 'tell me a joke'")
+		fmt.Println("- 0 to exit")
 		
 		input, err := reader.ReadString('\n')
 		if err != nil {
