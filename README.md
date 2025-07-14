@@ -1,12 +1,13 @@
 # GoGPT
-![GoGPT Logo](assets/GoGPT.svg)
+
+<img src="assets/GoGPT.svg" alt="GoGPT Logo" width="200">
 
 A simple command-line chatbot written in Go that can greet users, tell the time, and share jokes.
 
 ## Features
 
 - **Interactive Chat Interface**: Engage with the bot using either numbered commands or natural language
-- **Multiple Response Types**: 
+- **Multiple Response Types**:
   - Greeting and self-introduction
   - Current time and date display
   - Random joke telling
@@ -40,7 +41,6 @@ A simple command-line chatbot written in Go that can greet users, tell the time,
    ```bash
    ./GoGPT
    ```
-   
 2. Enter your name when prompted
 3. Choose from the available options
 
@@ -49,28 +49,32 @@ A simple command-line chatbot written in Go that can greet users, tell the time,
 The chatbot supports both numbered commands and natural language input:
 
 #### Option 1: Greeting/Introduction
+
 - **Number command**: Type `1`
 - **Natural language**: Say "hello", "hi", "introduce yourself", "who are you", etc.
 - **Response**: The bot will introduce itself and greet you by name
 
 #### Option 2: Time and Date
+
 - **Number command**: Type `2`
 - **Natural language**: Ask "what time is it?", "time", "clock", "hour", "now", etc.
 - **Response**: Current time (HH:MM:SS format) and today's date
 
 #### Option 3: Tell a Joke
+
 - **Number command**: Type `3`
 - **Natural language**: Say "tell me a joke", "joke", "funny", "humor", "make me laugh", etc.
 - **Response**: A random joke from the bot's collection
 
 #### Exit
+
 - **Command**: Type `0`
 - **Action**: Exits the chatbot
 
 ### Example Conversation
 
 ```
-Welcome to GoGPT! Please enter your name: 
+Welcome to GoGPT! Please enter your name:
 Alice
 Hello, Alice!
 
@@ -82,7 +86,7 @@ You can type numbers (1, 2, 3) or use natural language:
 - 0 to exit
 
 hello
-Hello Alice, I am GoGPT! 
+Hello Alice, I am GoGPT!
 
 What would you like me to do?
 ...
@@ -122,13 +126,17 @@ GoGPT/
 ## Customization
 
 ### Adding New Jokes
+
 Edit the `data/jokes.txt` file and add new jokes separated by commas:
+
 ```
 Your new joke here,Another joke,And another one...
 ```
 
 ### Extending Functionality
+
 To add new commands:
+
 1. Add new response function in `chatbot/responses.go`
 2. Add new case in `ProcessMsg` function in `chatbot/chatbot.go`
 3. Define keywords for natural language processing
@@ -137,6 +145,7 @@ To add new commands:
 ## Dependencies
 
 This project uses only Go standard library packages:
+
 - `bufio` - For reading user input
 - `fmt` - For formatted I/O
 - `os` - For file operations and system interaction
