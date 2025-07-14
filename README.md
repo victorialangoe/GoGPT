@@ -1,6 +1,8 @@
 # GoGPT
 
-<img src="assets/GoGPT.svg" alt="GoGPT Logo" width="600">
+<div align="center">
+  <img src="assets/GoGPT.svg" alt="GoGPT Logo" width="500">
+</div>
 
 A simple command-line chatbot written in Go that can greet users, tell the time, and share jokes.
 
