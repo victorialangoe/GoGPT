@@ -9,12 +9,13 @@ import (
 )
 
 func (b Bot) getGreetingResponse() string {
-	return fmt.Sprintf("Hello %s, I am %s!", b.UserName, b.Name)
+	return fmt.Sprintf("Hello %s, I am %s! \n", b.UserName, b.Name)
 }
 
 func (Bot) getTTimeResponse() string {
-	time := time.Now()
-	return fmt.Sprintf("The time right now is %s",time)
+	t := time.Now()
+	layout := "15:04:05"
+	return fmt.Sprintf("The time right now is %s and the day is %sth of %s", t.Format(layout), fmt.Sprintf("%d", t.Day()), t.Month())
 }
 
 func (Bot) getJokeResponse() string {

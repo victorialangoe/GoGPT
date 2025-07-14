@@ -5,16 +5,16 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
 	b := chatbot.Bot{Name: "GoGPT"}
-    sc := bufio.NewScanner(os.Stdin)
+    reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Welcome to GoGPT! Please enter your name: ")
 
-    sc.Scan()
-
-    name := sc.Text()
+    name, _ := reader.ReadString('\n')
+    name = strings.TrimSpace(name)
 	b.UserName = name
 
     fmt.Printf("Hello, %s!\n", name)
@@ -22,13 +22,17 @@ func main() {
 	for {
 		fmt.Println("What would you like me to do?")
 		fmt.Println("I can 1) introduce myself, 2) tell you the time, or 3) tell a joke or 0 to exit")
-		if !sc.Scan() {
+		
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			fmt.Printf("Error reading input: %v\n", err)
 			break
 		}
-		input := sc.Text()
+		
+		input = strings.TrimSpace(input)
 		if input == "0" {
 			fmt.Println("Exiting GoGPT!")
-			os.Exit(1)
+			break
 		}
 		b.ProcessMsg(input)
 	}
