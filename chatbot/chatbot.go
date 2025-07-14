@@ -1,5 +1,7 @@
 package chatbot
 
+import "fmt"
+
 type Bot struct{
 	Name string
 	UserName string
@@ -8,10 +10,12 @@ type Bot struct{
 func (b Bot) ProcessMsg (input string) {
 	switch input {
 		case "1":
-			b.getGreetingResponse()
+			fmt.Println(b.getGreetingResponse())
 		case "2":
-			b.getTTimeResponse()
+			fmt.Println(b.getTTimeResponse())
 		case "3":
-			
+			fmt.Println(b.getJokeResponse())
+		default:
+			fmt.Println("I don't understand that option. Please choose 1, 2, 3, or 0 to exit.")
 	}
 }
